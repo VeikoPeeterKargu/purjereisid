@@ -1107,7 +1107,7 @@ a {
   }
 
   .bento-item img {
-    object-position: center center;
+    object-position: center 25%;
   }
 
   .bento-large {
@@ -1178,7 +1178,7 @@ a {
   }
 
   .kapten-img {
-    object-position: center 25%;
+    object-position: center 65%;
   }
 
   .kapten-name {
@@ -1206,7 +1206,7 @@ a {
   }
 
   .contact-img {
-    object-position: center 20%;
+    object-position: center 15%;
   }
 
   .contact-desc {
