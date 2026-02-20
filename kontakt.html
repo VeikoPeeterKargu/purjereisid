@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="et">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kirjuta meile — Purjereisid</title>
+    <meta name="description" content="Võta ühendust ja paneme koos sinu unistuste purjetamisreisi paika." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <style>
+        /* ── Tokens (same as main page) ── */
+        :root {
+            --bg: #fdfcf8;
+            --bg-2: #f4f0eb;
+            --bg-card: #ffffff;
+            --fg: #0b1d3d;
+            --fg-dim: #5c677d;
+            --accent: #c8a55c;
+            --accent-l: #e2ca8a;
+            --ff-display: 'Playfair Display', Georgia, serif;
+            --ff-body: 'Inter', system-ui, sans-serif;
+            --ease: cubic-bezier(.22, 1, .36, 1);
+            --mid: .5s var(--ease);
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--ff-body);
+            background: var(--bg);
+            color: var(--fg);
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* ── Nav (simplified) ── */
+        .nav {
+            background: rgba(255, 255, 255, .95);
+            backdrop-filter: blur(24px) saturate(1.4);
+            -webkit-backdrop-filter: blur(24px) saturate(1.4);
+            padding: .55rem 0;
+            box-shadow: 0 1px 0 rgba(0, 0, 0, .05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 clamp(1rem, 4vw, 2rem);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+            transition: transform .2s;
+        }
+
+        .nav-logo:hover {
+            transform: translateY(-1px);
+        }
+
+        .nav-logo span {
+            font-family: var(--ff-display);
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: .2em;
+            background: linear-gradient(135deg, var(--accent) 0%, #dfc07a 50%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-back {
+            font-size: .78rem;
+            font-weight: 600;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: var(--fg);
+            transition: color .2s;
+            display: flex;
+            align-items: center;
+            gap: .4rem;
+        }
+
+        .nav-back:hover {
+            color: var(--accent);
+        }
+
+        /* ── Page Content ── */
+        .page-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: clamp(3rem, 8vh, 6rem) clamp(1rem, 4vw, 2rem);
+        }
+
+        .form-container {
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .form-header {
+            margin-bottom: clamp(2rem, 4vh, 3rem);
+        }
+
+        .form-label {
+            font-family: var(--ff-body);
+            font-size: .7rem;
+            font-weight: 600;
+            letter-spacing: .25em;
+            text-transform: uppercase;
+            color: var(--accent);
+            display: block;
+            margin-bottom: .75rem;
+        }
+
+        .form-title {
+            font-family: var(--ff-display);
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            color: var(--fg);
+            letter-spacing: -.02em;
+            margin-bottom: 1rem;
+        }
+
+        .form-title em {
+            font-style: italic;
+            color: var(--accent);
+        }
+
+        .form-subtitle {
+            font-size: 1rem;
+            color: var(--fg-dim);
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        /* ── Form ── */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: .4rem;
+        }
+
+        .form-group label {
+            font-size: .75rem;
+            font-weight: 600;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--fg-dim);
+        }
+
+        .form-group label .required {
+            color: #c0392b;
+            margin-left: 2px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            font-family: var(--ff-body);
+            font-size: .95rem;
+            padding: .85rem 1rem;
+            border: 1px solid rgba(200, 165, 92, .15);
+            border-radius: 8px;
+            background: var(--bg-card);
+            color: var(--fg);
+            transition: all .3s;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(200, 165, 92, .1);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #aaa;
+            font-weight: 300;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+        }
+
+        @media (max-width: 520px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ── Submit ── */
+        .btn-submit {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: .6rem;
+            padding: 1rem 2.5rem;
+            font-family: var(--ff-body);
+            font-weight: 600;
+            font-size: .85rem;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            background: var(--accent);
+            color: var(--bg);
+            border-radius: 8px;
+            transition: all var(--mid);
+            margin-top: .5rem;
+        }
+
+        .btn-submit:hover {
+            background: var(--accent-l);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(200, 165, 92, .25);
+        }
+
+        .btn-submit:active {
+            transform: translateY(0);
+        }
+
+        .btn-submit svg {
+            transition: transform .3s;
+        }
+
+        .btn-submit:hover svg {
+            transform: translateX(3px);
+        }
+
+        /* ── Success message ── */
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        .success-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .success-message h3 {
+            font-family: var(--ff-display);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--fg);
+            margin-bottom: .75rem;
+        }
+
+        .success-message p {
+            font-size: 1rem;
+            color: var(--fg-dim);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .success-message a {
+            font-size: .85rem;
+            font-weight: 600;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            color: var(--accent);
+            border-bottom: 1px solid var(--accent);
+            padding-bottom: 2px;
+            transition: color .2s;
+        }
+
+        .success-message a:hover {
+            color: var(--fg);
+            border-color: var(--fg);
+        }
+
+        /* ── Footer ── */
+        .footer {
+            border-top: 1px solid rgba(200, 165, 92, .08);
+            padding: 1.5rem 0;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 clamp(1rem, 4vw, 2rem);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+        }
+
+        .footer-brand span {
+            font-family: var(--ff-display);
+            font-size: .75rem;
+            letter-spacing: .3em;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
+
+        .footer-copy {
+            font-size: .7rem;
+            color: var(--fg-dim);
+            opacity: .5;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Nav -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="/purjereisid/" class="nav-logo">
+                <svg viewBox="0 0 120 120" width="56" height="56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="60" y1="10" x2="60" y2="100" stroke="#c8a55c" stroke-width="2.5" stroke-linecap="round" />
+                    <path d="M60 16 Q92 40 60 84" fill="rgba(200,165,92,.12)" stroke="#c8a55c" stroke-width="2"
+                        stroke-linecap="round" />
+                    <path d="M60 24 Q34 48 60 84" fill="rgba(226,202,138,.06)" stroke="#e2ca8a" stroke-width="1.3"
+                        stroke-linecap="round" opacity=".7" />
+                    <path d="M16 94 Q36 86 60 88 Q84 86 104 94" fill="none" stroke="#c8a55c" stroke-width="2.5"
+                        stroke-linecap="round" />
+                    <path d="M10 102 Q34 94 60 96 Q86 94 110 102" fill="none" stroke="#c8a55c" stroke-width="1.2"
+                        stroke-linecap="round" opacity=".3" />
+                </svg>
+                <span>PURJEREISID</span>
+            </a>
+            <a href="/purjereisid/" class="nav-back">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round">
+                    <path d="M19 12H5" />
+                    <path d="M12 5l-7 7 7 7" />
+                </svg>
+                Tagasi
+            </a>
+        </div>
+    </nav>
+
+    <!-- Form Content -->
+    <main class="page-content">
+        <div class="form-container">
+            <div class="form-header">
+                <span class="form-label">Võta ühendust</span>
+                <h1 class="form-title">Kirjuta <em>meile</em></h1>
+                <p class="form-subtitle">Jäta oma soov ja kontakt — vastame esimesel võimalusel ja paneme koos sinu
+                    unistuste purjereisi paika.</p>
+            </div>
+
+            <form id="contact-form" class="contact-form" action="https://formsubmit.co/peeter@kargu.ee" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Nimi</label>
+                        <input type="text" id="name" name="name" placeholder="Sinu nimi" />
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefon</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+372 ..." />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-posti aadress <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="sinu@email.ee" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Sinu soov</label>
+                    <textarea id="message" name="message"
+                        placeholder="Kirjelda oma unistuste purjereisi — sihtkoht, kuupäevad, grupi suurus, soovid..."></textarea>
+                </div>
+
+                <!-- FormSubmit settings -->
+                <input type="hidden" name="_subject" value="Uus purjereisi päring veebilehelt" />
+                <input type="hidden" name="_next"
+                    value="https://veikopeeterkargu.github.io/purjereisid/kontakt.html?sent=1" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="text" name="_honey" style="display:none" />
+
+                <button type="submit" class="btn-submit">
+                    Saada päring
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round">
+                        <path d="M5 12h14" />
+                        <path d="M12 5l7 7-7 7" />
+                    </svg>
+                </button>
+            </form>
+
+            <!-- Success Message -->
+            <div id="success" class="success-message">
+                <div class="success-icon">⛵</div>
+                <h3>Täname!</h3>
+                <p>Sinu päring on saadetud. Võtame sinuga ühendust esimesel võimalusel!</p>
+                <a href="/purjereisid/">← Tagasi avalehele</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <svg viewBox="0 0 120 120" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="60" y1="10" x2="60" y2="100" stroke="#c8a55c" stroke-width="3" stroke-linecap="round" />
+                    <path d="M60 16 Q92 40 60 84" fill="none" stroke="#c8a55c" stroke-width="2.5"
+                        stroke-linecap="round" />
+                    <path d="M16 94 Q36 86 60 88 Q84 86 104 94" fill="none" stroke="#c8a55c" stroke-width="2.5"
+                        stroke-linecap="round" />
+                </svg>
+                <span>PURJEREISID</span>
+            </div>
+            <span class="footer-copy">© 2026 · Kapten Peeter & Katri</span>
+        </div>
+    </footer>
+
+    <script>
+        // Show success message if redirected after submission
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('sent') === '1') {
+            document.getElementById('contact-form').style.display = 'none';
+            document.querySelector('.form-header').style.display = 'none';
+            document.getElementById('success').classList.add('show');
+        }
+    </script>
+</body>
+
+</html>

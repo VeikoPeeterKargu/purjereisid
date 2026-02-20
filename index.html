@@ -356,15 +356,13 @@
             </svg>
             Facebook
           </a>
-          <button
-            onclick="navigator.clipboard.writeText('peeter@kargu.ee').then(()=>{const b=this;b.innerHTML=b.innerHTML.replace('E-post','Kopeeritud!');b.classList.add('copied');setTimeout(()=>{b.innerHTML=b.innerHTML.replace('Kopeeritud!','E-post');b.classList.remove('copied')},2000)})"
-            class="btn btn-ghost" title="Kopeeri e-posti aadress">
+          <a href="/purjereisid/kontakt.html" class="btn btn-ghost">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <rect x="2" y="4" width="20" height="16" rx="3" />
               <path d="M2 7l10 7 10-7" />
             </svg>
             E-post
-          </button>
+          </a>
         </div>
       </div>
       <div class="contact-img-wrap" data-anim="reveal">
