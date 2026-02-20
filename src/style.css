@@ -304,6 +304,11 @@ a {
   transform: translateY(-2px);
 }
 
+.btn-ghost.copied {
+  border-color: #2ecc71;
+  color: #2ecc71;
+}
+
 .btn-fb {
   background: var(--blue);
   color: #fff;
