@@ -1201,12 +1201,12 @@ a {
   }
 
   .contact-img-wrap {
-    aspect-ratio: 4/3;
+    aspect-ratio: 1/1;
     order: -1;
   }
 
   .contact-img {
-    object-position: center 15%;
+    object-position: center 30%;
   }
 
   .contact-desc {
