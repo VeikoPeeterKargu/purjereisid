@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="et">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Purjereisid — Katamaraaniga Vahemerel</title>
+  <meta name="description"
+    content="Katamaraaniga purjetamine Vahemerel. Türgi, Kreeka, Horvaatia ja Itaalia ilusamad rannikud koos kapten Peetri ja Katriga." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <!-- ─── Preloader — big logo, longer ─── -->
+  <div id="preloader" class="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-logo">
+        <svg class="logo-icon-big" viewBox="0 0 120 120" width="100" height="100" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <!-- Mast -->
+          <line x1="60" y1="10" x2="60" y2="100" stroke="#c8a55c" stroke-width="2.5" stroke-linecap="round" />
+          <!-- Main sail -->
+          <path d="M60 16 Q92 40 60 84" fill="rgba(200,165,92,.08)" stroke="#c8a55c" stroke-width="2"
+            stroke-linecap="round" />
+          <!-- Jib sail -->
+          <path d="M60 24 Q34 48 60 84" fill="rgba(226,202,138,.04)" stroke="#e2ca8a" stroke-width="1.2"
+            stroke-linecap="round" opacity=".6" />
+          <!-- Water line 1 -->
+          <path d="M16 94 Q36 86 60 88 Q84 86 104 94" fill="none" stroke="#c8a55c" stroke-width="2"
+            stroke-linecap="round" />
+          <!-- Water line 2 -->
+          <path d="M10 102 Q34 94 60 96 Q86 94 110 102" fill="none" stroke="#c8a55c" stroke-width="1.3"
+            stroke-linecap="round" opacity=".35" />
+        </svg>
+      </div>
+      <div class="preloader-text">PURJEREISID</div>
+      <div class="preloader-sub">Katamaraaniga Vahemerel</div>
+    </div>
+  </div>
+
+  <!-- ─── Navigation — always visible ─── -->
+  <nav id="nav" class="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <svg class="nav-logo-icon" viewBox="0 0 120 120" width="56" height="56" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <!-- Mast -->
+          <line x1="60" y1="10" x2="60" y2="100" stroke="#c8a55c" stroke-width="2.5" stroke-linecap="round" />
+          <!-- Main sail with fill -->
+          <path d="M60 16 Q92 40 60 84" fill="rgba(200,165,92,.12)" stroke="#c8a55c" stroke-width="2"
+            stroke-linecap="round" />
+          <!-- Jib sail -->
+          <path d="M60 24 Q34 48 60 84" fill="rgba(226,202,138,.06)" stroke="#e2ca8a" stroke-width="1.3"
+            stroke-linecap="round" opacity=".7" />
+          <!-- Water line -->
+          <path d="M16 94 Q36 86 60 88 Q84 86 104 94" fill="none" stroke="#c8a55c" stroke-width="2.5"
+            stroke-linecap="round" />
+          <!-- Second water line -->
+          <path d="M10 102 Q34 94 60 96 Q86 94 110 102" fill="none" stroke="#c8a55c" stroke-width="1.2"
+            stroke-linecap="round" opacity=".3" />
+        </svg>
+        <span>PURJEREISID</span>
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="#galerii" class="nav-link">Galerii</a>
+        <a href="#sihtkoht" class="nav-link">Sihtkohad</a>
+        <a href="#miks" class="nav-link">Miks katamaraan</a>
+        <a href="#meeskond" class="nav-link">Meeskond</a>
+        <a href="#kontakt" class="nav-link btn-nav">Broneeri</a>
+      </div>
+      <button id="nav-toggle" class="nav-toggle" aria-label="Menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ─── HERO — image shifted right, text left ─── -->
+  <header id="hero" class="hero">
+    <div class="hero-media">
+      <img src="/images/hero-catamaran-sunset.png" alt="Katamaraan purjetamas päikeseloojangul Vahemerel"
+        class="hero-img" />
+    </div>
+    <div class="hero-gradient"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow" data-anim="fade-up">Katamaraaniga purjetamine Vahemerel</p>
+      <h1 class="hero-title" data-anim="fade-up" data-delay="0.15">
+        Sinu suvi algab<br />sealt, kus lõppeb <em>kallas</em>
+      </h1>
+      <p class="hero-sub" data-anim="fade-up" data-delay="0.3">Türgi türkiissinised lahed. Kreeka lumivalged külad.
+        Horvaatia tuhat saart. Itaalia peidetud rannad. Avasta neid kõiki katamaraani tekilt.</p>
+      <div class="hero-ctas" data-anim="fade-up" data-delay="0.45">
+        <a href="#kontakt" class="btn btn-gold">Broneeri reis</a>
+        <a href="#galerii" class="btn btn-ghost">Vaata galeriid</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="hero-scroll-line"></div>
+      <span>Keri</span>
+    </div>
+  </header>
+
+  <!-- ─── STATS MARQUEE ─── -->
+  <div class="marquee-section">
+    <div class="marquee-track">
+      <div class="marquee-content">
+        <span class="marquee-item">15+ aastat kogemust</span>
+        <span class="marquee-dot">◆</span>
+        <span class="marquee-item">7 · 14 · 21 päeva reisid</span>
+        <span class="marquee-dot">◆</span>
+        <span class="marquee-item">4 sihtkohta Vahemerel</span>
+        <span class="marquee-dot">◆</span>
+        <span class="marquee-item">Bavaria katamaraanid</span>
+        <span class="marquee-dot">◆</span>
+        <span class="marquee-item">Kapten Peeter & Katri</span>
+        <span class="marquee-dot">◆</span>
+        <span class="marquee-item">15+ aastat kogemust</span>
+        <span class="marquee-dot">◆</span>
+        <span class="marquee-item">7 · 14 · 21 päeva reisid</span>
+        <span class="marquee-dot">◆</span>
+        <span class="marquee-item">4 sihtkohta Vahemerel</span>
+        <span class="marquee-dot">◆</span>
+        <span class="marquee-item">Bavaria katamaraanid</span>
+        <span class="marquee-dot">◆</span>
+        <span class="marquee-item">Kapten Peeter & Katri</span>
+        <span class="marquee-dot">◆</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── PHOTO GALLERY — Bento Grid ─── -->
+  <section id="galerii" class="section">
+    <div class="container">
+      <div class="section-intro">
+        <span class="label">Galerii</span>
+        <h2 class="section-title">Hetked <em>merelt</em></h2>
+      </div>
+      <div class="bento-grid">
+        <div class="bento-item bento-large" data-anim="reveal">
+          <img src="/images/peeter-kohviga.jpg" alt="Peeter hommikukohviga katamaraanil" loading="lazy" />
+          <div class="bento-caption">Hommik merel</div>
+        </div>
+        <div class="bento-item" data-anim="reveal">
+          <img src="/images/katamaran-rainbow.jpg" alt="Katamaraan vikerkaare all" loading="lazy" />
+          <div class="bento-caption">Sardiinia, Itaalia</div>
+        </div>
+        <div class="bento-item" data-anim="reveal">
+          <img src="/images/katri-meri.jpg" alt="Katri nautimas vaadet" loading="lazy" />
+          <div class="bento-caption">Kreeka rannik</div>
+        </div>
+        <div class="bento-item bento-wide" data-anim="reveal">
+          <img src="/images/peeter-storm.jpg" alt="Peeter tormis roolis" loading="lazy" />
+          <div class="bento-caption">Atlandi ookeani ületus</div>
+        </div>
+        <div class="bento-item" data-anim="reveal">
+          <img src="/images/peeter-roolis.jpg" alt="Peeter roolis" loading="lazy" />
+          <div class="bento-caption">Horvaatia saarestik</div>
+        </div>
+        <div class="bento-item" data-anim="reveal">
+          <img src="/images/sadam-oo.jpg" alt="Öine sadamalinn" loading="lazy" />
+          <div class="bento-caption">Itaalia öine sadama tuled</div>
+        </div>
+        <div class="bento-item" data-anim="reveal">
+          <img src="/images/loojang-tekil.jpg" alt="Päikeseloojang katamaraani tekil" loading="lazy" />
+          <div class="bento-caption">Õhtu Vahemerel</div>
+        </div>
+        <div class="bento-item" data-anim="reveal">
+          <img src="/images/peeter-racing.jpg" alt="Regatil purjetamas" loading="lazy" />
+          <div class="bento-caption">Regatt</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── DESTINATIONS — Horizontal Scroll ─── -->
+  <section id="sihtkoht" class="section section-dark">
+    <div class="container">
+      <div class="section-intro">
+        <span class="label">Sihtkohad</span>
+        <h2 class="section-title">Vahemere <em>parimad</em></h2>
+      </div>
+    </div>
+    <div class="dest-scroll" id="dest-scroll">
+      <div class="dest-card" data-anim="reveal">
+        <div class="dest-img"><img src="/images/turkey.png" alt="Türgi" loading="lazy" /></div>
+        <div class="dest-info">
+          <h3>Türgi</h3>
+          <p>Fethiye türkiissinised lahed, antiiklinnad ja mägised rannikud</p>
+        </div>
+      </div>
+      <div class="dest-card" data-anim="reveal">
+        <div class="dest-img"><img src="/images/greece.png" alt="Kreeka" loading="lazy" /></div>
+        <div class="dest-info">
+          <h3>Kreeka</h3>
+          <p>Kükladide valged külad, kristallselge vesi ja lõputu saarestik</p>
+        </div>
+      </div>
+      <div class="dest-card" data-anim="reveal">
+        <div class="dest-img"><img src="/images/peeter-hvar.jpg" alt="Horvaatia" loading="lazy" /></div>
+        <div class="dest-info">
+          <h3>Horvaatia</h3>
+          <p>Tuhat saart, Hvari öine elu, Spliti ajalugu ja Dubrovniku võlu</p>
+        </div>
+      </div>
+      <div class="dest-card" data-anim="reveal">
+        <div class="dest-img dest-italy"><img src="/images/italy.png" alt="Itaalia" loading="lazy" /></div>
+        <div class="dest-info">
+          <h3>Itaalia</h3>
+          <p>Amalfi rannik, Sardiinia metsikud kaljud ja Sitsiilia maitsed</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── TRIP INFO — Duration badges ─── -->
+  <section class="section trip-section">
+    <div class="container">
+      <div class="section-intro">
+        <span class="label">Reisi kestus</span>
+        <h2 class="section-title">Vali oma <em>seiklus</em></h2>
+      </div>
+      <div class="trip-options">
+        <div class="trip-card" data-anim="fade-up">
+          <div class="trip-days">7</div>
+          <div class="trip-label">päeva</div>
+          <p>Lühike põgenemine — ideaalne esmakordseks tutvumiseks katamaraanielu ja ühe sihtkoha avastamiseks.</p>
+        </div>
+        <div class="trip-card trip-card-featured" data-anim="fade-up">
+          <div class="trip-days">14</div>
+          <div class="trip-label">päeva</div>
+          <p>Kõige populaarsem — piisavalt aega, et sukelduda kohalikku kultuuri, avastada peidetud lahti ja nautida
+            merelist vabadust.</p>
+        </div>
+        <div class="trip-card" data-anim="fade-up">
+          <div class="trip-days">21</div>
+          <div class="trip-label">päeva</div>
+          <p>Suur seiklus — mitu sihtkohta, üleminekud sadamate vahel ja tõeline mereelu kogemus.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── WHY CATAMARAN — with cool visual icons ─── -->
+  <section id="miks" class="section section-dark miks-section">
+    <div class="container">
+      <div class="section-intro">
+        <span class="label">Miks just meie</span>
+        <h2 class="section-title">Miks <em>katamaraan?</em></h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature" data-anim="fade-up">
+          <div class="feature-icon">
+            <svg viewBox="0 0 48 48" width="48" height="48" fill="none" stroke="#c8a55c" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="6" y="20" width="36" height="20" rx="3" />
+              <path d="M6 28h36" />
+              <path d="M16 20V14a8 8 0 0116 0v6" />
+              <circle cx="24" cy="8" r="3" fill="rgba(200,165,92,.15)" />
+              <path d="M2 44l6-4 6 4 6-4 6 4 6-4 6 4 6-4 6 4" stroke-width="1.2" opacity=".3" />
+            </svg>
+          </div>
+          <h3>Villa merel</h3>
+          <p>Avar tekk, eraldi kajutid ja privaatsus. Magad tähtede all, ärkad päiksetõusu peale.</p>
+        </div>
+        <div class="feature" data-anim="fade-up">
+          <div class="feature-icon">
+            <svg viewBox="0 0 48 48" width="48" height="48" fill="none" stroke="#c8a55c" stroke-width="1.5"
+              stroke-linecap="round">
+              <path d="M4 36 Q12 28 24 36 Q36 44 44 36" />
+              <path d="M4 28 Q12 20 24 28 Q36 36 44 28" opacity=".5" />
+              <path d="M24 8v16" />
+              <path d="M16 12h16" opacity=".6" />
+              <circle cx="24" cy="24" r="18" stroke-dasharray="4 4" opacity=".15" />
+            </svg>
+          </div>
+          <h3>Stabiilsus</h3>
+          <p>Kaks keret — minimaalne õõtsumine. Ideaalne lõõgastumiseks ilma merehaiguseta.</p>
+        </div>
+        <div class="feature" data-anim="fade-up">
+          <div class="feature-icon">
+            <svg viewBox="0 0 48 48" width="48" height="48" fill="none" stroke="#c8a55c" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 40 Q14 30 20 34 Q26 38 32 28 Q38 18 44 22" />
+              <path d="M8 40 L8 10" />
+              <circle cx="32" cy="16" r="5" fill="rgba(200,165,92,.1)" stroke="#c8a55c" />
+              <path d="M30 14l2 2 4-4" stroke-width="1.2" />
+            </svg>
+          </div>
+          <h3>Peidetud lahed</h3>
+          <p>Madal süvis viib sind kohtadesse, kuhu suured laevad ei pääse. Sinu privaatne paradiis.</p>
+        </div>
+        <div class="feature" data-anim="fade-up">
+          <div class="feature-icon">
+            <svg viewBox="0 0 48 48" width="48" height="48" fill="none" stroke="#c8a55c" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="24" cy="20" r="14" stroke-dasharray="3 3" opacity=".2" />
+              <path d="M24 6v4" />
+              <path d="M24 30v4" />
+              <path d="M10 20h4" />
+              <path d="M34 20h4" />
+              <path d="M24 20l8-6" stroke-width="2" />
+              <path d="M24 20l-4 8" stroke-width="1.5" opacity=".6" />
+              <circle cx="24" cy="20" r="2" fill="#c8a55c" />
+              <path d="M4 42l6-3 6 3 6-3 6 3 6-3 6 3 6-3" opacity=".25" />
+            </svg>
+          </div>
+          <h3>Vabadus</h3>
+          <p>Iga päev uus sadam, uus rand. Sina otsustad kuhu tuul viib.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── MEESKOND — Peeter & Katri with their photo ─── -->
+  <section id="meeskond" class="section kapten-section">
+    <div class="container">
+      <div class="section-intro">
+        <span class="label">Meeskond</span>
+        <h2 class="section-title">Peeter <em>&</em> Katri</h2>
+      </div>
+      <div class="kapten-grid">
+        <div class="kapten-img-wrap" data-anim="reveal">
+          <img src="/images/peeter-katri.jpg" alt="Peeter ja Katri" class="kapten-img" />
+        </div>
+        <div class="kapten-text" data-anim="fade-up">
+          <h3 class="kapten-name">Kapten Peeter</h3>
+          <p class="kapten-bio">15+ aasta pikkune meresõidukogemus — Atlandi ookeanist Vahemere idakaldani. Kogenud
+            kapten, kellega merele minek on nii turvaline kui ka lõbus.</p>
+          <h3 class="kapten-name">Katri</h3>
+          <p class="kapten-bio">Kapteni omanik ja reiside korraldaja. Katri hoolitseb selle eest, et iga detail oleks
+            paigas — marsruudist menüüni, sadamatest elamusteni.</p>
+          <p class="kapten-bio">Iga reis on personaalne ja ainulaadne. Olgu tegemist romantilise paarikeisiga, pere
+            puhkuse või sõprade seiklusega — kohandame marsruudi sinu soovide järgi.</p>
+          <a href="#kontakt" class="btn btn-gold">Räägi meiega</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CONTACT ─── -->
+  <section id="kontakt" class="section section-dark section-contact">
+    <div class="container contact-grid">
+      <div class="contact-text" data-anim="fade-up">
+        <span class="label">Võta ühendust</span>
+        <h2 class="section-title">Alusta oma <em>lugu</em></h2>
+        <p class="contact-desc">Kirjuta meile ja paneme koos sinu unistuste purjetamisreisi paika. Reisid kestavad 7, 14
+          või 21 päeva — sinu valik.</p>
+        <div class="contact-links">
+          <a href="https://www.facebook.com/Purjereisid" target="_blank" rel="noopener noreferrer" class="btn btn-fb">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+            </svg>
+            Facebook
+          </a>
+          <a href="mailto:peeter@kargu.ee?subject=Purjereisi%20päring" class="btn btn-ghost">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="4" width="20" height="16" rx="3" />
+              <path d="M2 7l10 7 10-7" />
+            </svg>
+            E-post
+          </a>
+        </div>
+      </div>
+      <div class="contact-img-wrap" data-anim="reveal">
+        <img src="/images/peeter-marina.jpg" alt="Peeter sadamas" class="contact-img" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Footer ─── -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <svg viewBox="0 0 120 120" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="60" y1="10" x2="60" y2="100" stroke="#c8a55c" stroke-width="3" stroke-linecap="round" />
+          <path d="M60 16 Q92 40 60 84" fill="none" stroke="#c8a55c" stroke-width="2.5" stroke-linecap="round" />
+          <path d="M16 94 Q36 86 60 88 Q84 86 104 94" fill="none" stroke="#c8a55c" stroke-width="2.5"
+            stroke-linecap="round" />
+        </svg>
+        <span>PURJEREISID</span>
+      </div>
+      <span class="footer-copy">© 2026 · Kapten Peeter & Katri</span>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
