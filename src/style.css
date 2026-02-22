@@ -963,8 +963,20 @@ a {
 
 .contact-links {
   display: flex;
+  flex-direction: column;
   gap: 1rem;
-  flex-wrap: wrap;
+  max-width: 340px;
+}
+
+.contact-links .btn,
+#epost-placeholder {
+  width: 100%;
+  justify-content: center;
+}
+
+#epost-placeholder .btn {
+  width: 100%;
+  justify-content: center;
 }
 
 .contact-img-wrap {
