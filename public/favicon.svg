@@ -1,10 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0a1628"/>
-      <stop offset="100%" stop-color="#0f2b52"/>
-    </linearGradient>
-  </defs>
-  <rect width="32" height="32" rx="6" fill="url(#bg)"/>
-  <text x="16" y="22" text-anchor="middle" font-size="18">⛵</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <line x1="60" y1="10" x2="60" y2="100" stroke="#c8a55c" stroke-width="3" stroke-linecap="round"/>
+  <path d="M60 16 Q92 40 60 84" fill="rgba(200,165,92,.12)" stroke="#c8a55c" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M60 24 Q34 48 60 84" fill="rgba(226,202,138,.06)" stroke="#e2ca8a" stroke-width="1.5" stroke-linecap="round" opacity=".7"/>
+  <path d="M16 94 Q36 86 60 88 Q84 86 104 94" fill="none" stroke="#c8a55c" stroke-width="3" stroke-linecap="round"/>
+  <path d="M10 102 Q34 94 60 96 Q86 94 110 102" fill="none" stroke="#c8a55c" stroke-width="1.5" stroke-linecap="round" opacity=".3"/>
 </svg>

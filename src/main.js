@@ -23,7 +23,7 @@ window.addEventListener('load', () => {
     setTimeout(() => {
       preloader.classList.add('done');
       document.querySelector('.hero')?.classList.add('loaded');
-    }, 3500);
+    }, 1500);
   }
 });
 
