@@ -143,53 +143,85 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ── GA4 CTA click tracking ──
-function trackCTA(buttonName, buttonLocation) {
+// Uses beacon transport + delayed navigation to ensure events fire before page unload
+function trackCTA(buttonName, buttonLocation, navigateUrl) {
   if (typeof gtag === 'function') {
     gtag('event', 'cta_click', {
       button_name: buttonName,
       button_location: buttonLocation,
+      transport_type: 'beacon',
+      event_callback: () => {
+        if (navigateUrl) window.location.href = navigateUrl;
+      },
     });
+    // Safety: navigate after 150ms even if GA4 callback doesn't fire
+    if (navigateUrl) {
+      setTimeout(() => { window.location.href = navigateUrl; }, 150);
+    }
+  } else if (navigateUrl) {
+    window.location.href = navigateUrl;
   }
 }
 
+// Helper: attach tracking to a link element (prevents default, tracks, then navigates)
+function trackLink(selector, buttonName, buttonLocation) {
+  const el = typeof selector === 'string' ? document.querySelector(selector) : selector;
+  if (!el) return;
+  el.addEventListener('click', (e) => {
+    const href = el.getAttribute('href');
+    const isExternal = el.target === '_blank' || (href && href.startsWith('http'));
+    if (isExternal) {
+      // External links: track without blocking, browser opens new tab
+      trackCTA(buttonName, buttonLocation);
+    } else if (href && !href.startsWith('#')) {
+      // Internal navigation links: block, track, then navigate
+      e.preventDefault();
+      trackCTA(buttonName, buttonLocation, href);
+    } else {
+      // Anchor links: just track
+      trackCTA(buttonName, buttonLocation);
+    }
+  });
+}
+
 // 1. "Broneeri" — nav menüüs
-document.querySelector('.btn-nav')?.addEventListener('click', () => {
-  trackCTA('Broneeri', 'nav_menu');
-});
+trackLink('.btn-nav', 'Broneeri', 'nav_menu');
 
 // 2. "Broneeri oma reis" — hero sektsioon
-document.querySelector('.hero-ctas .btn-gold')?.addEventListener('click', () => {
-  trackCTA('Broneeri oma reis', 'hero');
-});
+trackLink('.hero-ctas .btn-gold', 'Broneeri oma reis', 'hero');
 
 // 3. "Broneeri Reis" / "E-mail" — hõljuv nupp
-document.getElementById('floating-cta')?.addEventListener('click', () => {
-  const ctaEl = document.getElementById('floating-cta');
-  const isDocked = ctaEl?.classList.contains('is-docked');
-  trackCTA(isDocked ? 'E-mail (hõljuv)' : 'Broneeri Reis (hõljuv)', 'floating_cta');
-});
+const floatCtaEl = document.getElementById('floating-cta');
+if (floatCtaEl) {
+  floatCtaEl.addEventListener('click', (e) => {
+    const href = floatCtaEl.getAttribute('href');
+    const docked = floatCtaEl.classList.contains('is-docked');
+    const name = docked ? 'E-mail (hõljuv)' : 'Broneeri Reis (hõljuv)';
+    if (href && !href.startsWith('#')) {
+      e.preventDefault();
+      trackCTA(name, 'floating_cta', href);
+    } else {
+      trackCTA(name, 'floating_cta');
+    }
+  });
+}
 
 // 4. "Räägi meiega" — meeskonna sektsioon
-document.querySelector('.kapten-text .btn-gold')?.addEventListener('click', () => {
-  trackCTA('Räägi meiega', 'meeskond');
-});
+trackLink('.kapten-text .btn-gold', 'Räägi meiega', 'meeskond');
 
 // 5. "Facebook" — kontakt sektsioon
-document.querySelector('.btn-fb')?.addEventListener('click', () => {
-  trackCTA('Facebook', 'kontakt');
-});
+trackLink('.btn-fb', 'Facebook', 'kontakt');
 
 // 6. "E-mail" — kontakt sektsioon (dünaamiliselt renderdatud)
 const epostObserver = new MutationObserver(() => {
   const emailBtn = document.querySelector('#epost-placeholder a');
   if (emailBtn && !emailBtn.dataset.tracked) {
     emailBtn.dataset.tracked = 'true';
-    emailBtn.addEventListener('click', () => {
-      trackCTA('E-mail', 'kontakt');
-    });
+    trackLink(emailBtn, 'E-mail', 'kontakt');
   }
 });
 const epostTarget = document.getElementById('epost-placeholder');
 if (epostTarget) {
   epostObserver.observe(epostTarget, { childList: true, subtree: true });
 }
+
