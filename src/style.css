@@ -1074,8 +1074,19 @@ a {
     padding: clamp(7rem, 12vh, 10rem) clamp(1.25rem, 5vw, 2rem) clamp(4rem, 8vh, 7rem);
   }
 
+  .hero-gradient {
+    background:
+      linear-gradient(90deg, #6ea5d6 0%, #6ea5d6 40%, rgba(110, 165, 214, 0.85) 60%, rgba(110, 165, 214, 0.3) 80%),
+      linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, transparent 100%);
+  }
+
   .hero-title {
-    font-size: clamp(2.2rem, 9vw, 3.5rem);
+    font-size: clamp(2rem, 8vw, 3rem);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+  }
+
+  .hero-title em {
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
   }
 
   .hero-eyebrow {
@@ -1084,8 +1095,9 @@ a {
   }
 
   .hero-sub {
-    font-size: .95rem;
+    font-size: .9rem;
     line-height: 1.7;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
   }
 
   .hero-ctas {
