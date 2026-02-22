@@ -9,8 +9,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 // ── Smooth scroll ──
 const lenis = new Lenis({
-  lerp: 0.08,             // Linear interpolation for snappy, even scroll
-  wheelMultiplier: 1.2,   // Make mouse wheel a bit more responsive
+  lerp: 0.15,             // Suurem number teeb alguse kiiremaks, ei tundu 'tatis kinni'
+  wheelMultiplier: 0.8,   // Väiksem number piirab lõppkiirust ja kaugele lendamist
   smoothWheel: true,
 });
 function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
