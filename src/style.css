@@ -969,13 +969,10 @@ a {
 }
 
 .contact-links .btn,
-#epost-placeholder {
-  width: 100%;
-  justify-content: center;
-}
-
+#epost-placeholder,
 #epost-placeholder .btn {
-  width: 100%;
+  display: flex !important;
+  width: 100% !important;
   justify-content: center;
 }
 
