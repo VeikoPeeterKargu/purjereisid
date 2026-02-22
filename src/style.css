@@ -66,7 +66,7 @@ a {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 clamp(1rem, 4vw, 2rem);
+  padding: 0 clamp(1.5rem, 5vw, 2.5rem);
 }
 
 .section {
@@ -1047,6 +1047,11 @@ a {
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
   }
 
+  .nav-links.open .nav-link {
+    color: var(--fg) !important;
+    text-shadow: none !important;
+  }
+
   .nav-toggle {
     display: flex;
   }
@@ -1121,11 +1126,17 @@ a {
 
   /* Destinations */
   .dest-scroll {
-    padding: 0 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    padding: 0 1.5rem 1.5rem;
+    gap: 1.25rem;
+    overflow: visible;
+    /* disable scroll snap */
   }
 
   .dest-card {
-    flex: 0 0 280px;
+    flex: none;
+    width: 100%;
   }
 
   .dest-img {
@@ -1218,10 +1229,21 @@ a {
     gap: .75rem;
   }
 
-  .contact-links .btn {
-    width: 100%;
+  .contact-links .btn,
+  #epost-placeholder,
+  .floating-cta.is-docked {
+    width: 100% !important;
     justify-content: center;
     text-align: center;
+  }
+
+  /* Make floating CTA a bottom sticky bar on mobile */
+  .floating-cta.is-fixed {
+    bottom: 1rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    width: auto;
+    border-radius: 8px;
   }
 
   /* Section spacing */
@@ -1272,4 +1294,290 @@ a {
   .feature {
     padding: 1.5rem 1.25rem;
   }
+}
+
+/* ══════════════════════════════════
+   NEW: Urgency Badge
+   ══════════════════════════════════ */
+.urgency-badge {
+  display: inline-block;
+  background: rgba(200, 165, 92, 0.2);
+  border: 1px solid rgba(200, 165, 92, 0.4);
+  color: #fff;
+  padding: 0.4rem 1rem;
+  border-radius: 30px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* ══════════════════════════════════
+   NEW: Testimonials Section
+   ══════════════════════════════════ */
+.testimonial-section {
+  background: var(--bg-2);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.testimonial-card {
+  background: var(--bg-card);
+  padding: 2.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(200, 165, 92, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  transition: all var(--mid);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  border-color: rgba(200, 165, 92, 0.3);
+}
+
+.stars {
+  color: var(--accent);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.testimonial-quote {
+  font-family: var(--ff-display);
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--fg);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-author {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--fg-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ══════════════════════════════════
+   NEW: Morphing CTA
+   ══════════════════════════════════ */
+.floating-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent);
+  color: var(--bg);
+  box-shadow: 0 10px 30px rgba(200, 165, 92, 0.4);
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+  /* dimensions and border-radius set by .is-fixed or .is-docked */
+}
+
+.floating-cta.is-fixed {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 99;
+  width: 170px;
+  height: 52px;
+  border-radius: 50px;
+  opacity: 0;
+  transform: translateY(100px);
+  pointer-events: none;
+}
+
+.floating-cta.is-fixed.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.floating-cta.is-docked {
+  position: static;
+  width: 140px;
+  /* same as fb approx */
+  height: 48px;
+  border-radius: 4px;
+  /* matches fb btn */
+  box-shadow: none;
+  /* or very light */
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#epost-placeholder {
+  width: 140px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cta-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Base states */
+.cta-content-email {
+  opacity: 0;
+  transform: translateY(20px) rotateX(-90deg);
+}
+
+.cta-content-book {
+  opacity: 1;
+  transform: translateY(0) rotateX(0deg);
+}
+
+/* Docked states */
+.floating-cta.is-docked .cta-content-book {
+  opacity: 0;
+  transform: translateY(-20px) rotateX(90deg);
+}
+
+.floating-cta.is-docked .cta-content-email {
+  opacity: 1;
+  transform: translateY(0) rotateX(0deg);
+}
+
+.floating-cta:hover {
+  background: var(--accent-l);
+  transform: scale(1.02);
+  /* generic hover */
+}
+
+.floating-cta.is-fixed:hover {
+  transform: translateY(-5px);
+}
+
+
+/* ══════════════════════════════════
+   NEW: Booking Process Section
+   ══════════════════════════════════ */
+.process-section {
+  background: var(--bg);
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.step-card {
+  position: relative;
+  background: var(--bg-card);
+  padding: 2.5rem 1.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(200, 165, 92, 0.1);
+  text-align: center;
+  transition: transform var(--mid), box-shadow var(--mid);
+  z-index: 1;
+}
+
+.step-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+  border-color: rgba(200, 165, 92, 0.3);
+}
+
+.step-number {
+  position: absolute;
+  top: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3rem;
+  height: 3rem;
+  background: var(--accent);
+  color: var(--bg);
+  font-family: var(--ff-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(200, 165, 92, 0.3);
+  z-index: 2;
+}
+
+.step-card h3 {
+  margin-top: 1rem;
+  margin-bottom: 0.75rem;
+  font-family: var(--ff-display);
+  font-size: 1.25rem;
+}
+
+.step-card p {
+  color: var(--fg-dim);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ══════════════════════════════════
+   NEW: FAQ Section
+   ══════════════════════════════════ */
+.faq-section {
+  background: var(--bg-2);
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.faq-item {
+  background: var(--bg-card);
+  padding: 2rem;
+  border-radius: 10px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  transition: all var(--mid);
+}
+
+.faq-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.faq-item h3 {
+  font-family: var(--ff-body);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--fg);
+  margin-bottom: 0.75rem;
+}
+
+.faq-item p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--fg-dim);
+}
+
+.faq-item b {
+  color: var(--fg);
+  font-weight: 600;
 }
