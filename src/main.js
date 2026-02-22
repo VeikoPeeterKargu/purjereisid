@@ -7,14 +7,9 @@ import { initAnimations } from './animations.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
-// ── Smooth scroll ──
-const lenis = new Lenis({
-  lerp: 0.15,             // Suurem number teeb alguse kiiremaks, ei tundu 'tatis kinni'
-  wheelMultiplier: 0.8,   // Väiksem number piirab lõppkiirust ja kaugele lendamist
-  smoothWheel: true,
-});
-function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
-requestAnimationFrame(raf);
+// ── Native scroll ──
+// Lenis smooth scroll removed based on user feedback to ensure 0ms latency scrolling.
+
 
 // ── Preloader ──
 window.addEventListener('load', () => {
