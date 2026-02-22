@@ -335,3 +335,56 @@ function handleSwipe() {
     prevImage(); // Swiped right -> prev
   }
 }
+
+// ─── VIDEO MODAL LOGIC ───
+const videoBtn = document.getElementById('play-video-btn');
+const videoModal = document.getElementById('video-modal');
+const videoClose = document.getElementById('video-close');
+const ytPlayer = document.getElementById('yt-player');
+// Using the YouTube ID provided by the user
+const videoId = 'ti1R68ngUDw';
+
+function openVideoModal() {
+  if (!videoModal) return;
+  // Auto-play the video when the modal opens
+  ytPlayer.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
+  videoModal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+
+  // Track video view in Google Analytics
+  if (typeof gtag === 'function') {
+    gtag('event', 'view_video', { video_name: 'Lagoon 46 Kreeka' });
+  }
+}
+
+function closeVideoModal() {
+  if (!videoModal) return;
+  videoModal.classList.remove('active');
+  document.body.style.overflow = '';
+  // Stop the video playing after the modal fade-out transition
+  setTimeout(() => {
+    ytPlayer.src = '';
+  }, 400); // matches CSS var(--mid)
+}
+
+if (videoBtn) {
+  videoBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    openVideoModal();
+  });
+}
+
+if (videoClose) videoClose.addEventListener('click', closeVideoModal);
+
+if (videoModal) {
+  videoModal.addEventListener('click', (e) => {
+    // Close modal when clicking the dark overlay background
+    if (e.target === videoModal) closeVideoModal();
+  });
+}
+
+document.addEventListener('keydown', (e) => {
+  if (videoModal && videoModal.classList.contains('active') && e.key === 'Escape') {
+    closeVideoModal();
+  }
+});

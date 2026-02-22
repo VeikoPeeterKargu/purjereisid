@@ -132,7 +132,12 @@
         inimmassideta.</p>
       <div class="hero-ctas" data-anim="fade-up" data-delay="0.5">
         <a href="/purjereisid/kontakt.html" class="btn btn-gold btn-magnetic">Broneeri oma reis</a>
-        <a href="#galerii" class="btn btn-ghost btn-magnetic">Vaata galeriid</a>
+        <button id="play-video-btn" class="btn btn-ghost btn-magnetic">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="margin-right:8px;">
+            <path d="M8 5v14l11-7z" />
+          </svg>
+          Vaata videot
+        </button>
       </div>
     </div>
     <div class="hero-scroll">
@@ -687,6 +692,15 @@
     <div class="lightbox-content">
       <img class="lightbox-img" id="lightbox-img" src="" alt="" />
       <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+  </div>
+
+  <!-- Travel Video Modal -->
+  <div class="video-modal" id="video-modal" role="dialog" aria-modal="true" aria-label="Purjereisi video">
+    <div class="video-container">
+      <button class="video-close" id="video-close" aria-label="Sulge">&times;</button>
+      <iframe id="yt-player" src="" frameborder="0" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+        allowfullscreen></iframe>
     </div>
   </div>
 
