@@ -1438,19 +1438,16 @@ a {
 
 .floating-cta.is-docked {
   position: static;
-  width: 140px;
-  /* same as fb approx */
+  width: 100%;
   height: 48px;
   border-radius: 4px;
-  /* matches fb btn */
   box-shadow: none;
-  /* or very light */
   opacity: 1;
   pointer-events: auto;
 }
 
 #epost-placeholder {
-  width: 140px;
+  width: 100%;
   height: 48px;
   display: flex;
   align-items: center;
