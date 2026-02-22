@@ -141,3 +141,55 @@ document.addEventListener('DOMContentLoaded', () => {
   initHero();
   initAnimations();
 });
+
+// ── GA4 CTA click tracking ──
+function trackCTA(buttonName, buttonLocation) {
+  if (typeof gtag === 'function') {
+    gtag('event', 'cta_click', {
+      button_name: buttonName,
+      button_location: buttonLocation,
+    });
+  }
+}
+
+// 1. "Broneeri" — nav menüüs
+document.querySelector('.btn-nav')?.addEventListener('click', () => {
+  trackCTA('Broneeri', 'nav_menu');
+});
+
+// 2. "Broneeri oma reis" — hero sektsioon
+document.querySelector('.hero-ctas .btn-gold')?.addEventListener('click', () => {
+  trackCTA('Broneeri oma reis', 'hero');
+});
+
+// 3. "Broneeri Reis" / "E-mail" — hõljuv nupp
+document.getElementById('floating-cta')?.addEventListener('click', () => {
+  const ctaEl = document.getElementById('floating-cta');
+  const isDocked = ctaEl?.classList.contains('is-docked');
+  trackCTA(isDocked ? 'E-mail (hõljuv)' : 'Broneeri Reis (hõljuv)', 'floating_cta');
+});
+
+// 4. "Räägi meiega" — meeskonna sektsioon
+document.querySelector('.kapten-text .btn-gold')?.addEventListener('click', () => {
+  trackCTA('Räägi meiega', 'meeskond');
+});
+
+// 5. "Facebook" — kontakt sektsioon
+document.querySelector('.btn-fb')?.addEventListener('click', () => {
+  trackCTA('Facebook', 'kontakt');
+});
+
+// 6. "E-mail" — kontakt sektsioon (dünaamiliselt renderdatud)
+const epostObserver = new MutationObserver(() => {
+  const emailBtn = document.querySelector('#epost-placeholder a');
+  if (emailBtn && !emailBtn.dataset.tracked) {
+    emailBtn.dataset.tracked = 'true';
+    emailBtn.addEventListener('click', () => {
+      trackCTA('E-mail', 'kontakt');
+    });
+  }
+});
+const epostTarget = document.getElementById('epost-placeholder');
+if (epostTarget) {
+  epostObserver.observe(epostTarget, { childList: true, subtree: true });
+}
