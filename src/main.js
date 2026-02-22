@@ -228,3 +228,115 @@ if (epostTarget) {
   epostObserver.observe(epostTarget, { childList: true, subtree: true });
 }
 
+// ─── LIGHTBOX LOGIC ───
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const lightboxCaption = document.getElementById('lightbox-caption');
+const lightboxClose = document.getElementById('lightbox-close');
+const lightboxPrev = document.getElementById('lightbox-prev');
+const lightboxNext = document.getElementById('lightbox-next');
+
+// Get all gallery items
+const galleryItems = Array.from(document.querySelectorAll('.bento-item'));
+
+let currentImageIndex = 0;
+
+function openLightbox(index) {
+  if (index < 0 || index >= galleryItems.length) return;
+
+  currentImageIndex = index;
+  const item = galleryItems[index];
+  const imgElement = item.querySelector('img');
+  const captionElement = item.querySelector('.bento-caption');
+
+  // Use the same image source (already WebP)
+  lightboxImg.src = imgElement.src;
+  lightboxImg.alt = imgElement.alt;
+  lightboxCaption.textContent = captionElement ? captionElement.textContent : '';
+
+  lightbox.classList.add('active');
+  document.body.style.overflow = 'hidden'; // Prevent scrolling
+}
+
+function closeLightbox() {
+  lightbox.classList.remove('active');
+  document.body.style.overflow = '';
+  setTimeout(() => {
+    lightboxImg.src = ''; // Clear source to stop decoding/memory
+  }, 400); // match CSS transition var(--mid)
+}
+
+function nextImage() {
+  let nextIndex = currentImageIndex + 1;
+  if (nextIndex >= galleryItems.length) nextIndex = 0; // Wrap around
+  openLightbox(nextIndex);
+}
+
+function prevImage() {
+  let prevIndex = currentImageIndex - 1;
+  if (prevIndex < 0) prevIndex = galleryItems.length - 1; // Wrap around
+  openLightbox(prevIndex);
+}
+
+// Event Listeners for Gallery
+galleryItems.forEach((item, index) => {
+  item.style.cursor = 'pointer'; // Ensure it looks clickable
+  item.addEventListener('click', () => {
+    openLightbox(index);
+    // Track GA event for opening a photo
+    if (typeof gtag === 'function') {
+      const captionElement = item.querySelector('.bento-caption');
+      gtag('event', 'view_photo', {
+        photo_name: captionElement ? captionElement.textContent : 'unknown'
+      });
+    }
+  });
+});
+
+// Lightbox Controls
+if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+if (lightboxNext) lightboxNext.addEventListener('click', (e) => { e.stopPropagation(); nextImage(); });
+if (lightboxPrev) lightboxPrev.addEventListener('click', (e) => { e.stopPropagation(); prevImage(); });
+
+// Close when clicking outside the image
+if (lightbox) {
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox || e.target.classList.contains('lightbox-content')) {
+      closeLightbox();
+    }
+  });
+}
+
+// Keyboard Navigation
+document.addEventListener('keydown', (e) => {
+  if (!lightbox || !lightbox.classList.contains('active')) return;
+
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowRight') nextImage();
+  if (e.key === 'ArrowLeft') prevImage();
+});
+
+// Touch/Swipe Support
+let touchStartX = 0;
+let touchEndX = 0;
+
+if (lightbox) {
+  lightbox.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  lightbox.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  }, { passive: true });
+}
+
+function handleSwipe() {
+  const threshold = 50; // min distance for swipe
+  if (touchEndX < touchStartX - threshold) {
+    nextImage(); // Swiped left -> next
+  }
+  if (touchEndX > touchStartX + threshold) {
+    prevImage(); // Swiped right -> prev
+  }
+}
