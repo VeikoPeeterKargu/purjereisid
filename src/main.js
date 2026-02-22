@@ -212,6 +212,9 @@ trackLink('.kapten-text .btn-gold', 'Räägi meiega', 'meeskond');
 // 5. "Facebook" — kontakt sektsioon
 trackLink('.btn-fb', 'Facebook', 'kontakt');
 
+// 6. "WhatsApp" — kontakt sektsioon
+trackLink('.btn-wa', 'WhatsApp', 'kontakt');
+
 // 6. "E-mail" — kontakt sektsioon (dünaamiliselt renderdatud)
 const epostObserver = new MutationObserver(() => {
   const emailBtn = document.querySelector('#epost-placeholder a');
