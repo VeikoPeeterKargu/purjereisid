@@ -123,11 +123,14 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     e.preventDefault();
     const href = a.getAttribute('href');
     if (href === '#') {
-      lenis.scrollTo(0);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
     const t = document.querySelector(href);
-    if (t) lenis.scrollTo(t, { offset: -60 });
+    if (t) {
+      const topPos = t.getBoundingClientRect().top + window.scrollY - 60;
+      window.scrollTo({ top: topPos, behavior: 'smooth' });
+    }
   });
 });
 
