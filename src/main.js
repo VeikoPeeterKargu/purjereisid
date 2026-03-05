@@ -1,7 +1,7 @@
 import './style.css';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Lenis from '@studio-freight/lenis';
+// Lenis removed — using native scroll for 0ms latency
 import { initHero } from './hero.js';
 import { initAnimations } from './animations.js';
 

@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <!-- Google Analytics (GA4) -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" />
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-1CQ79NTTPS"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -12,9 +13,10 @@
     gtag('config', 'G-1CQ79NTTPS');
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Purjereisid & Katamaraani Rent Kapteniga | Puhkus Sõpradele Vahemerel</title>
+  <meta name="theme-color" content="#0b1d3d" />
+  <title>Purjereisid & Katamaraani Rent Kapteniga Vahemerel</title>
   <meta name="description"
-    content="Luksuslik katamaraani rent kapteniga ja privaatsed purjereisid Vahemerel. Türgi, Kreeka, Horvaatia ja Itaalia ilusamad rannikud koos eestikeelse meeskonnaga." />
+    content="Katamaraani rent kapteniga Vahemerel ⚓ Privaatsed purjereisid Türgis, Kreekas, Horvaatias ja Itaalias. 15+ aastat kogemust, eestikeelne kapten, 4 kajutit. Broneeri 2026!" />
 
   <!-- Canonical -->
   <link rel="canonical" href="https://veikopeeterkargu.github.io/purjereisid/" />
@@ -45,6 +47,9 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,700&family=Inter:wght@300;400;500;600&display=swap"
     rel="stylesheet" />
+
+  <!-- Preload hero image for faster LCP -->
+  <link rel="preload" as="image" type="image/webp" href="/purjereisid/images/hero-catamaran-sunset.webp" />
 </head>
 
 <body>
@@ -117,7 +122,7 @@
   <header id="hero" class="hero">
     <div class="hero-media">
       <img src="/images/hero-catamaran-sunset.webp" alt="Katamaraan purjetamas päikeseloojangul Vahemerel"
-        class="hero-img" />
+        class="hero-img" fetchpriority="high" />
     </div>
     <div class="hero-gradient"></div>
     <div class="hero-content">
@@ -183,40 +188,44 @@
       </div>
       <div class="bento-grid">
         <div class="bento-item bento-large" data-anim="reveal">
-          <img src="/images/peeter-kohviga.webp" alt="Kapten Peeter hommikukohviga luksuslikul purjereisil Vahemerel"
-            loading="lazy" />
+          <img src="/purjereisid/images/peeter-kohviga.webp"
+            alt="Kapten Peeter hommikukohviga luksuslikul purjereisil Vahemerel" class="bento-photo" loading="lazy" />
           <div class="bento-caption">Hommik merel</div>
         </div>
         <div class="bento-item" data-anim="reveal">
-          <img src="/images/katamaran-rainbow.webp" alt="Privaatne katamaraani rent Sardiinias vikerkaare all"
-            loading="lazy" />
+          <img src="/purjereisid/images/katamaran-rainbow.webp"
+            alt="Privaatne katamaraani rent Sardiinias vikerkaare all" class="bento-photo" loading="lazy" />
           <div class="bento-caption">Sardiinia, Itaalia</div>
         </div>
         <div class="bento-item" data-anim="reveal">
-          <img src="/images/katri-meri.webp" alt="Katri nautimas purjetamist Kreeka rannikul koos sõpradega"
-            loading="lazy" />
+          <img src="/purjereisid/images/katri-meri.webp" alt="Katri nautimas purjetamist Kreeka rannikul koos sõpradega"
+            class="bento-photo" loading="lazy" />
           <div class="bento-caption">Kreeka rannik</div>
         </div>
         <div class="bento-item bento-wide" data-anim="reveal">
-          <img src="/images/peeter-storm.webp" alt="Kogenud Eesti kapten tormisel ookeaniületusel" loading="lazy" />
+          <img src="/purjereisid/images/peeter-storm.webp" alt="Kogenud Eesti kapten tormisel ookeaniületusel"
+            class="bento-photo" loading="lazy" />
           <div class="bento-caption">Atlandi ookeani ületus</div>
         </div>
         <div class="bento-item" data-anim="reveal">
-          <img src="/images/peeter-roolis.webp" alt="Katamaraani rent Horvaatias – kapten roolis" loading="lazy" />
+          <img src="/purjereisid/images/peeter-roolis.webp" alt="Katamaraani rent Horvaatias – kapten roolis"
+            class="bento-photo" loading="lazy" />
           <div class="bento-caption">Horvaatia saarestik</div>
         </div>
         <div class="bento-item" data-anim="reveal">
-          <img src="/images/sadam-oo.webp" alt="Öised sadamatuled Itaalias purjereisil" loading="lazy" />
+          <img src="/purjereisid/images/sadam-oo.webp" alt="Öised sadamatuled Itaalias purjereisil" class="bento-photo"
+            loading="lazy" />
           <div class="bento-caption">Itaalia öine sadama tuled</div>
         </div>
         <div class="bento-item" data-anim="reveal">
-          <img src="/images/loojang-tekil.webp"
-            alt="Luksuslik purjereis Vahemerel: romantiline päikeseloojang katamaraani tekil" loading="lazy" />
+          <img src="/purjereisid/images/loojang-tekil.webp"
+            alt="Luksuslik purjereis Vahemerel: romantiline päikeseloojang katamaraani tekil" class="bento-photo"
+            loading="lazy" />
           <div class="bento-caption">Õhtu Vahemerel</div>
         </div>
         <div class="bento-item" data-anim="reveal">
-          <img src="/images/peeter-racing.webp" alt="Sportlik purjetamine ja katamaraanide regatt Vahemerel"
-            loading="lazy" />
+          <img src="/purjereisid/images/peeter-racing.webp" alt="Sportlik purjetamine ja katamaraanide regatt Vahemerel"
+            class="bento-photo" loading="lazy" />
           <div class="bento-caption">Regatt</div>
         </div>
       </div>
@@ -363,7 +372,7 @@
             </svg>
           </div>
           <h3>Täielik Vabadus</h3>
-          <p>Oleme paidlikud — kui meeldib üks laht, siis jääme sinna kauemaks. Uus vaade ja elamus on vaid
+          <p>Oleme paindlikud — kui meeldib üks laht, siis jääme sinna kauemaks. Uus vaade ja elamus on vaid
             ankruhiivamise kaugusel.</p>
         </div>
       </div>
@@ -417,7 +426,8 @@
             <h3>Mida sisaldab katamaraani rent ja purjereisi hind?</h3><span class="faq-icon"></span>
           </summary>
           <div class="faq-answer">
-            <p>Hind sisaldab luksusliku katamaraani renti koos kogenud kapteniga, kahest kajutit (tuled üksi või kaksi,
+            <p>Hind sisaldab luksusliku katamaraani renti koos kogenud kapteniga, nelja privaatset kaheinimese kajutit
+              laia topeltvoodiga (tuled üksi või paarina,
               kajut on sinu!), rikkalikku eestimaist toitu laevas ja
               katamaraani kütust kogu reisi vältel. <b>Hind ei sisalda:</b> lennupileteid Vahemerele, transfeeri
               sadamasse, alkoholi/erisoove, kaldapealseid
@@ -510,7 +520,7 @@
         "name": "Mida sisaldab katamaraani rent ja purjereisi hind?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Hind sisaldab luksusliku katamaraani renti koos kogenud kapteniga, kahest kajutit, rikkalikku eestimaist toitu laevas ja katamaraani kütust kogu reisi vältel. Hind ei sisalda lennupileteid Vahemerele, transfeeri sadamasse, alkoholi/erisoove, kaldapealseid sööke ning võimalikke sadama- või poimakse."
+          "text": "Hind sisaldab luksusliku katamaraani renti koos kogenud kapteniga, nelja privaatset kaheinimese kajutit laia topeltvoodiga, rikkalikku eestimaist toitu laevas ja katamaraani kütust kogu reisi vältel. Hind ei sisalda lennupileteid Vahemerele, transfeeri sadamasse, alkoholi/erisoove, kaldapealseid sööke ning võimalikke sadama- või poimakse."
         }
       },
       {
@@ -565,8 +575,121 @@
   }
   </script>
 
+  <!-- Organization + Service Schema for AI engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TravelAgency",
+    "name": "Purjereisid",
+    "url": "https://veikopeeterkargu.github.io/purjereisid/",
+    "description": "Luksuslik katamaraani rent kapteniga Vahemerel. Privaatsed purjereisid Türgis, Kreekas, Horvaatias ja Itaalias eestikeelse meeskonnaga.",
+    "email": "peeter@kargu.ee",
+    "telephone": "+372 506 7651",
+    "sameAs": [
+      "https://www.facebook.com/Purjereisid"
+    ],
+    "areaServed": [
+      {
+        "@type": "Place",
+        "name": "Türgi (Fethiye, Göcek)"
+      },
+      {
+        "@type": "Place",
+        "name": "Kreeka (Kükladid, Joonia saared)"
+      },
+      {
+        "@type": "Place",
+        "name": "Horvaatia (Hvar, Split, Dubrovnik)"
+      },
+      {
+        "@type": "Place",
+        "name": "Itaalia (Sardiinia, Amalfi, Sitsiilia)"
+      }
+    ],
+    "founder": {
+      "@type": "Person",
+      "name": "Peeter Kargu",
+      "jobTitle": "Kapten"
+    },
+    "makesOffer": {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "TouristTrip",
+        "name": "Katamaraani purjereis kapteniga Vahemerel",
+        "description": "Privaatne katamaraani rent kogenud eestikeelse kapteniga. 7, 14 või 21 päeva.",
+        "touristType": "Luxury Travel",
+        "availableLanguage": ["et", "en", "ru"]
+      }
+    }
+  }
+  </script>
+
+  <!-- AggregateRating + Reviews Schema — Google Rich Snippets ★★★★★ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TouristTrip",
+    "name": "Katamaraani purjereis kapteniga Vahemerel",
+    "description": "Privaatne katamaraani rent kogenud eestikeelse kapteniga Vahemerel. Türgi, Kreeka, Horvaatia, Itaalia.",
+    "provider": {
+      "@type": "TravelAgency",
+      "name": "Purjereisid"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "3",
+      "reviewCount": "3"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Marju" },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+        "reviewBody": "Enim jäi meelde vabadus, olemine, soe tuul. Sellel reisil lased ennast tuulel kanda, teed koostööd Neptuniga, kuulad kapteni sõna ja muudkui naudid, naudid, naudid…"
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Moonica" },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+        "reviewBody": "Purjetades oled olukorras, kus kõik tuleb sulle lähemale – kõik käib nii nagu meri tahab ja sina kohaned. Rõõm maailmast, spontaansus ja vabaduse tunne on need, mis selliste purjereisidega alati kaasa käivad."
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Jaanus" },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+        "reviewBody": "Tore oli kogeda navigatsiooniseadmete tundmaõppimist ja mereavarusi. Kapten Peetri tegutsemine rahutu ilmaga oli äärmiselt julgustav. Kindlasti meeldisid ka hilisõhtused tantsud pardal!"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Avaleht",
+        "item": "https://veikopeeterkargu.github.io/purjereisid/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Kontakt",
+        "item": "https://veikopeeterkargu.github.io/purjereisid/kontakt.html"
+      }
+    ]
+  }
+  </script>
+
   <!-- ─── TESTIMONIALS (Social Proof) ─── -->
-  <section id="tagasiside" class="section testimonial-section">
+  <section id="tagasiside" class="section testimonial-section" role="complementary" aria-label="Külaliste tagasiside">
     <div class="container">
       <div class="section-intro">
         <span class="label">Külaliste Kogemused</span>
@@ -598,7 +721,7 @@
   </section>
 
   <!-- ─── MEESKOND — Peeter & Katri with their photo ─── -->
-  <section id="meeskond" class="section kapten-section">
+  <section id="meeskond" class="section kapten-section" role="complementary" aria-label="Meeskonna tutvustus">
     <div class="container">
       <div class="section-intro">
         <span class="label">Meeskond</span>
@@ -606,7 +729,7 @@
       </div>
       <div class="kapten-grid">
         <div class="kapten-img-wrap" data-anim="reveal">
-          <img src="/images/peeter-katri.webp" alt="Peeter ja Katri" class="kapten-img" />
+          <img src="/images/peeter-katri.webp" alt="Peeter ja Katri" class="kapten-img" loading="lazy" />
         </div>
         <div class="kapten-text" data-anim="fade-up">
           <h3 class="kapten-name">Kapten Peeter</h3>
@@ -650,7 +773,7 @@
         </div>
       </div>
       <div class="contact-img-wrap" data-anim="reveal">
-        <img src="/images/peeter-marina.webp" alt="Peeter sadamas" class="contact-img" />
+        <img src="/images/peeter-marina.webp" alt="Peeter sadamas" class="contact-img" loading="lazy" />
       </div>
     </div>
   </section>
@@ -700,7 +823,7 @@
     <div class="video-container">
       <button class="video-close" id="video-close" aria-label="Sulge">&times;</button>
       <iframe id="yt-player" src="" frameborder="0" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
-        allowfullscreen></iframe>
+        allowfullscreen title="Purjereisid tutvustusvideo — katamaraaniga Vahemerel"></iframe>
     </div>
   </div>
 
