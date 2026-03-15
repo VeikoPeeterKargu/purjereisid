@@ -70,5 +70,7 @@ jobs:
           server: kargu.ee
           username: d26822f54447
           password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
           local-dir: ./dist/
           server-dir: /htdocs/purjereisid/
