@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteBase /purjereisid/
+
+# Serve existing files/dirs directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Route everything else to index.html
+RewriteRule . /purjereisid/index.html [L]
