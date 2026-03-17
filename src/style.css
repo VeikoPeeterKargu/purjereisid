@@ -262,6 +262,48 @@ a {
   transition: all var(--fast);
 }
 
+/* ── Language switcher ── */
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: .2rem;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  margin-right: .5rem;
+}
+
+.lang-active {
+  color: var(--accent);
+  border-bottom: 1.5px solid var(--accent);
+  padding-bottom: 1px;
+  cursor: default;
+}
+
+.lang-link {
+  color: var(--fg-dim);
+  transition: color var(--fast);
+  padding: 0 .15rem;
+}
+
+.lang-link:hover {
+  color: var(--accent);
+}
+
+.nav:not(.scrolled) .lang-active {
+  color: var(--accent-l);
+  border-color: var(--accent-l);
+}
+
+.nav:not(.scrolled) .lang-link {
+  color: rgba(255,255,255,.7);
+}
+
+.nav:not(.scrolled) .lang-link:hover {
+  color: var(--accent-l);
+}
+
 /* ── Buttons ── */
 .btn {
   display: inline-flex;
