@@ -11,6 +11,7 @@ export default defineConfig({
         kontakt: resolve(__dirname, 'kontakt.html'),
         kontaktRu: resolve(__dirname, 'kontakt-ru.html'),
         blogiKreekas: resolve(__dirname, 'blogi/purjereis-kreekas-2026.html'),
+        horvaatiaKevad: resolve(__dirname, 'horvaatia-kevad-2026.html'),
       },
     },
   },

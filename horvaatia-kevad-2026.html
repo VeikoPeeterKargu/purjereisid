@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="et">
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- Google Analytics (GA4) -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1CQ79NTTPS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-1CQ79NTTPS');
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b1d3d" />
+  <meta name="google-site-verification" content="mfZYM-jQmRwrIOLB_ZC6uGbeNzZKU-jmT9sVJ6LIGoQ" />
+
+  <title>Horvaatia Purjereis Mai 2026 — Lagoon 46 Kevadkruiis | Purjereisid</title>
+  <meta name="description"
+    content="Eksklusiivne kevadkruiis Horvaatias Mai 2026. Lagoon 46 katamaraan kapteniga, all-inclusive pardatoitlustus, täiskindlustus. 3 privaatset kajutit. Küsi pakkumist!" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.kargu.ee/purjereisid/horvaatia-kevad-2026.html" />
+
+  <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.kargu.ee/purjereisid/horvaatia-kevad-2026.html" />
+  <meta property="og:title" content="Horvaatia Kevadkruiis Mai 2026 — Lagoon 46 Luksuskatamaraan" />
+  <meta property="og:description"
+    content="Muretu luksuskruiis Aadria merel. All-inclusive pardatoitlustus, täiskindlustus, kogenud kapten. Vaid 3 privaatset kajutit!" />
+  <meta property="og:image" content="https://www.kargu.ee/purjereisid/images/horvaatia-hero.webp" />
+  <meta property="og:locale" content="et_EE" />
+  <meta property="og:site_name" content="Purjereisid" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Horvaatia Kevadkruiis Mai 2026 — Lagoon 46" />
+  <meta name="twitter:description"
+    content="Muretu luksuskruiis Aadria merel. All-inclusive, täiskindlustus, kogenud kapten." />
+  <meta name="twitter:image" content="https://www.kargu.ee/purjereisid/images/horvaatia-hero.webp" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/purjereisid/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+
+  <!-- Preload hero image -->
+  <link rel="preload" as="image" type="image/webp" href="/purjereisid/images/horvaatia-hero.webp" />
+
+  <style>
+    /* ── Tokens (sama design system) ── */
+    :root {
+      --bg: #fdfcf8;
+      --bg-2: #f4f0eb;
+      --bg-card: #ffffff;
+      --bg-dark: #0b1d3d;
+      --fg: #0b1d3d;
+      --fg-dim: #5c677d;
+      --fg-light: rgba(255, 255, 255, .85);
+      --accent: #c8a55c;
+      --accent-l: #e2ca8a;
+      --ff-display: 'Playfair Display', Georgia, serif;
+      --ff-body: 'Inter', system-ui, sans-serif;
+      --ease: cubic-bezier(.22, 1, .36, 1);
+      --mid: .5s var(--ease);
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--ff-body);
+      background: var(--bg);
+      color: var(--fg);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.7;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── Nav ── */
+    .nav {
+      background: rgba(255, 255, 255, .95);
+      -webkit-backdrop-filter: blur(24px) saturate(1.4);
+      backdrop-filter: blur(24px) saturate(1.4);
+      padding: .55rem 0;
+      box-shadow: 0 1px 0 rgba(0, 0, 0, .05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 clamp(1rem, 4vw, 2rem);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      transition: transform .2s;
+    }
+
+    .nav-logo:hover { transform: translateY(-1px); }
+
+    .nav-back {
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--fg);
+      transition: color .2s;
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+    }
+
+    .nav-back:hover { color: var(--accent); }
+
+    .btn-cta-nav {
+      background: var(--accent);
+      color: var(--bg);
+      padding: .55rem 1.4rem;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: .78rem;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      transition: all var(--mid);
+    }
+
+    .btn-cta-nav:hover {
+      background: var(--accent-l);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(200, 165, 92, .25);
+    }
+
+    /* ── Hero ── */
+    .lp-hero {
+      position: relative;
+      min-height: 75vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .lp-hero-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+    }
+
+    .lp-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(11,29,61,.75) 0%, rgba(11,29,61,.4) 50%, rgba(11,29,61,.2) 100%);
+    }
+
+    .lp-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      padding: clamp(2rem, 6vw, 4rem) clamp(1.5rem, 5vw, 3rem);
+      color: #fff;
+    }
+
+    .lp-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: rgba(200, 165, 92, .2);
+      border: 1px solid rgba(200, 165, 92, .4);
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+      padding: .4rem 1rem;
+      border-radius: 50px;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--accent-l);
+      margin-bottom: 1.5rem;
+    }
+
+    .lp-badge-dot {
+      width: 6px;
+      height: 6px;
+      background: #e74c3c;
+      border-radius: 50%;
+      animation: pulse-dot 2s infinite;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; }
+      50% { opacity: .3; }
+    }
+
+    .lp-hero-title {
+      font-family: var(--ff-display);
+      font-size: clamp(2.2rem, 6vw, 3.8rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -.02em;
+      margin-bottom: 1rem;
+    }
+
+    .lp-hero-title em {
+      font-style: italic;
+      color: var(--accent-l);
+    }
+
+    .lp-hero-sub {
+      font-size: clamp(.95rem, 2.5vw, 1.15rem);
+      line-height: 1.7;
+      color: rgba(255,255,255,.85);
+      margin-bottom: 2rem;
+      max-width: 550px;
+      font-weight: 300;
+    }
+
+    .btn-gold {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      padding: 1rem 2.2rem;
+      font-family: var(--ff-body);
+      font-weight: 600;
+      font-size: .85rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      background: var(--accent);
+      color: var(--bg-dark);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all var(--mid);
+    }
+
+    .btn-gold:hover {
+      background: var(--accent-l);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(200, 165, 92, .35);
+    }
+
+    /* ── Section Layout ── */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 clamp(1rem, 4vw, 2rem);
+    }
+
+    .section {
+      padding: clamp(3rem, 8vw, 5rem) 0;
+    }
+
+    .section-dark {
+      background: var(--bg-dark);
+      color: #fff;
+    }
+
+    .section-intro {
+      text-align: center;
+      margin-bottom: clamp(2rem, 4vw, 3rem);
+    }
+
+    .label {
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: block;
+      margin-bottom: .75rem;
+    }
+
+    .section-title {
+      font-family: var(--ff-display);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -.02em;
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    /* ── Value Cards ── */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .value-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(200, 165, 92, .1);
+      border-radius: 12px;
+      padding: 2rem 1.5rem;
+      transition: all .4s var(--ease);
+    }
+
+    .value-card:hover {
+      border-color: rgba(200, 165, 92, .3);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(0,0,0,.06);
+    }
+
+    .value-icon {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .value-card h3 {
+      font-family: var(--ff-display);
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: .6rem;
+      color: var(--fg);
+    }
+
+    .value-card p {
+      font-size: .9rem;
+      color: var(--fg-dim);
+      line-height: 1.65;
+    }
+
+    /* ── Details Section ── */
+    .details-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .detail-block {
+      background: rgba(200, 165, 92, .1);
+      border-left: 3px solid var(--accent);
+      padding: 1.5rem 2rem;
+      border-radius: 0 10px 10px 0;
+      margin-bottom: 1.5rem;
+    }
+
+    .detail-block h3 {
+      font-family: var(--ff-display);
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: .5rem;
+      color: var(--fg);
+    }
+
+    .detail-block p, .detail-block li {
+      font-size: .95rem;
+      color: var(--fg-dim);
+      line-height: 1.7;
+    }
+
+    .detail-block ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .detail-block li {
+      padding: .3rem 0;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+
+    .detail-block li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* ── Detail blocks in dark section — override colors ── */
+    .section-dark .detail-block {
+      background: rgba(200, 165, 92, .12);
+      border-left: 3px solid var(--accent-l);
+    }
+
+    .section-dark .detail-block h3 {
+      color: #fff;
+      font-size: 1.35rem;
+    }
+
+    .section-dark .detail-block p,
+    .section-dark .detail-block li {
+      color: rgba(255, 255, 255, .85);
+      font-size: 1.05rem;
+    }
+
+    .section-dark .detail-block strong {
+      color: var(--accent-l);
+    }
+
+    .section-dark .detail-block li::before {
+      color: var(--accent-l);
+    }
+
+    /* ── CTA Section ── */
+    .cta-section {
+      background: var(--bg-dark);
+      color: #fff;
+      padding: clamp(3rem, 8vw, 5rem) 0;
+    }
+
+    .cta-inner {
+      max-width: 650px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .cta-inner .section-title {
+      margin-bottom: 1rem;
+    }
+
+    .cta-desc {
+      font-size: 1.05rem;
+      color: var(--fg-light);
+      line-height: 1.7;
+      margin-bottom: .5rem;
+      font-weight: 300;
+    }
+
+    .cta-urgency {
+      font-size: .9rem;
+      color: var(--accent-l);
+      font-weight: 500;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ── Inline Contact Form ── */
+    .lp-form {
+      max-width: 550px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .lp-form .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: .4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .lp-form label {
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.6);
+    }
+
+    .lp-form label .required {
+      color: #e74c3c;
+      margin-left: 2px;
+    }
+
+    .lp-form input,
+    .lp-form textarea {
+      font-family: var(--ff-body);
+      font-size: .95rem;
+      padding: .85rem 1rem;
+      border: 1px solid rgba(200, 165, 92, .2);
+      border-radius: 8px;
+      background: rgba(255,255,255,.06);
+      color: #fff;
+      transition: all .3s;
+      outline: none;
+    }
+
+    .lp-form input:focus,
+    .lp-form textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(200, 165, 92, .15);
+    }
+
+    .lp-form input::placeholder,
+    .lp-form textarea::placeholder {
+      color: rgba(255,255,255,.35);
+      font-weight: 300;
+    }
+
+    .lp-form textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .lp-form .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .btn-submit-lp {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .6rem;
+      width: 100%;
+      padding: 1rem 2.5rem;
+      font-family: var(--ff-body);
+      font-weight: 600;
+      font-size: .85rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      background: var(--accent);
+      color: var(--bg-dark);
+      border-radius: 8px;
+      transition: all var(--mid);
+      margin-top: .5rem;
+    }
+
+    .btn-submit-lp:hover {
+      background: var(--accent-l);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(200, 165, 92, .3);
+    }
+
+    .btn-submit-lp svg { transition: transform .3s; }
+    .btn-submit-lp:hover svg { transform: translateX(3px); }
+
+    .alt-contact {
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: .85rem;
+      color: rgba(255,255,255,.5);
+    }
+
+    .alt-contact a {
+      color: var(--accent-l);
+      font-weight: 500;
+      border-bottom: 1px solid rgba(200,165,92,.3);
+      padding-bottom: 1px;
+      transition: color .2s;
+    }
+
+    .alt-contact a:hover { color: #fff; }
+
+    /* ── Success message ── */
+    .success-message {
+      display: none;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .success-message.show { display: block; }
+
+    .success-message .success-icon { font-size: 3rem; margin-bottom: 1rem; }
+
+    .success-message h3 {
+      font-family: var(--ff-display);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--accent-l);
+      margin-bottom: .75rem;
+    }
+
+    .success-message p {
+      font-size: 1rem;
+      color: var(--fg-light);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .success-message a {
+      color: var(--accent-l);
+      font-weight: 600;
+      border-bottom: 1px solid var(--accent);
+    }
+
+    /* ── Footer ── */
+    .footer {
+      border-top: 1px solid rgba(200, 165, 92, .08);
+      padding: 1.5rem 0;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 clamp(1rem, 4vw, 2rem);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+
+    .footer-brand span {
+      font-family: var(--ff-display);
+      font-size: .75rem;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .footer-copy {
+      font-size: .7rem;
+      color: var(--fg-dim);
+      opacity: .5;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .values-grid { grid-template-columns: 1fr; }
+      .details-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .lp-form .form-row { grid-template-columns: 1fr; }
+      .lp-hero { min-height: 65vh; }
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .values-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/purjereisid/" class="nav-logo" aria-label="Purjereisid — avaleht">
+        <svg viewBox="0 0 120 120" width="56" height="56" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="60" y1="10" x2="60" y2="100" stroke="#c8a55c" stroke-width="2.5" stroke-linecap="round" />
+          <path d="M60 16 Q92 40 60 84" fill="rgba(200,165,92,.12)" stroke="#c8a55c" stroke-width="2"
+            stroke-linecap="round" />
+          <path d="M60 24 Q34 48 60 84" fill="rgba(226,202,138,.06)" stroke="#e2ca8a" stroke-width="1.3"
+            stroke-linecap="round" opacity=".7" />
+          <path d="M16 94 Q36 86 60 88 Q84 86 104 94" fill="none" stroke="#c8a55c" stroke-width="2.5"
+            stroke-linecap="round" />
+          <path d="M10 102 Q34 94 60 96 Q86 94 110 102" fill="none" stroke="#c8a55c" stroke-width="1.2"
+            stroke-linecap="round" opacity=".3" />
+        </svg>
+      </a>
+      <div style="display:flex;align-items:center;gap:1.25rem;">
+        <a href="/purjereisid/" class="nav-back">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round">
+            <path d="M19 12H5" />
+            <path d="M12 5l-7 7 7 7" />
+          </svg>
+          Avaleht
+        </a>
+        <a href="#pakkumine" class="btn-cta-nav">Küsi Pakkumist</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="lp-hero">
+    <img src="/images/horvaatia-hero.webp" alt="Luksuslik katamaraan ankrus Horvaatia türkiissinises lahes" class="lp-hero-img" fetchpriority="high" />
+    <div class="lp-hero-overlay"></div>
+    <div class="lp-hero-content">
+      <div class="lp-badge">
+        <span class="lp-badge-dot"></span>
+        Piiratud · 3 kajutit
+      </div>
+      <h1 class="lp-hero-title">
+        Horvaatia Kevadkruiis<br /><em>Mai 2026</em>
+      </h1>
+      <p class="lp-hero-sub">Muretu luksuskruiis Aadria mere peidetud pärlitest uuel Lagoon 46 katamaraanil. Unusta deposiidirisk — meie hoolitseme kõige eest.</p>
+      <a href="#pakkumine" class="btn-gold">
+        Küsi personaalset pakkumist
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- Miks See Reis? — 6 Value Cards -->
+  <section class="section">
+    <div class="container">
+      <div class="section-intro">
+        <span class="label">Miks see reis?</span>
+        <h2 class="section-title">Kõik vajalik on <em>hinnas</em></h2>
+      </div>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">⛵</div>
+          <h3>Kogenud Kapten</h3>
+          <p>Peeter ja Katri on pardal, et tagada ohutus ja leida need kõige ilusamad lahed. 15+ aastat meresõidukogemust.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🍽️</div>
+          <h3>Gurmee Pardatoitlustus</h3>
+          <p>Hommiku-, lõuna- ja õhtusöögid pardal on hinnas. Mitmekülgne menüü nii lihalembestele kui taimse toidu austajatele.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">⛽</div>
+          <h3>Kõik Hinnas</h3>
+          <p>Kütus ja sadamatasud (3–4 ööd tasulistes sadamates) on paketis. Sinu ainus mure on lennupiletid!</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🛡️</div>
+          <h3>Täiskindlustus</h3>
+          <p>Deposiidiriski ei ole! Reisijatele ei kaasne omavastutuse riski laeva kahjustuste puhul (välja arvatud dinghy & päramootor).</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🏄</div>
+          <h3>Lisamugavused</h3>
+          <p>SUP-laud, WiFi (75GB) ja kohvimasin pardal kasutamiseks.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🛏️</div>
+          <h3>Privaatsus</h3>
+          <p>Müüki läheb vaid 3 privaatset kahekohalist kajutit. Igal kajutil oma isiklik dušš ja WC.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kuupäevad, Marsruut, Paat -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-intro">
+        <span class="label">Detailid</span>
+        <h2 class="section-title">Kuupäevad, marsruut ja <em>Sinu paat</em></h2>
+      </div>
+      <div class="details-grid">
+        <div>
+          <div class="detail-block">
+            <h3>📅 Kuupäevad</h3>
+            <p><strong>16. – 23. mai 2026</strong><br />7 päeva / 6 ööd merel<br />Laupäevast laupäevani</p>
+          </div>
+          <div class="detail-block">
+            <h3>🗺️ Marsruut</h3>
+            <p>Start <strong>Trogirist</strong> (Spliti lähedal). Täpne marsruut kujuneb vastavalt ilmale ja Sinu eelistustele — otsime peidetud lahesopid ja väldime turistilõkse.</p>
+            <ul>
+              <li>Šolta — rahulik saareelu ja kristallselge vesi</li>
+              <li>Brač — kuulus Zlatni Rat rand</li>
+              <li>Hvar — kaunid lavendliväljad ja öine sadama atmosfäär</li>
+              <li>Vis — puutumata loodus ja peidetud koobas</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="detail-block">
+            <h3>⛵ Lagoon 46 — Sinu Ujuv Villa</h3>
+            <p>Uus <strong>Lagoon 46</strong> (aastakäik 2022) on üks maailma populaarsemaid luksuskatamaraane.</p>
+            <ul>
+              <li>4 privaatset kajutit (3 müügis reisijatele)</li>
+              <li>Avar flybridge päevitamiseks ja vaadete nautimiseks</li>
+              <li>Suur saloon ja täisvarustusega köök</li>
+              <li>SUP-laud, WiFi, kohvimasin</li>
+            </ul>
+          </div>
+          <div class="detail-block">
+            <h3>🌊 Miks Mai?</h3>
+            <p>Mai on Horvaatias <strong>suurepärane</strong> — ilm on soe (22–26°C), meri rahulik, saared on tühjad ja hinnad soodsad. Väldi suvise tipphooaja rahvamassi ja naudi Horvaatiat nii, nagu see olema peaks.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA + Contact Form -->
+  <section class="cta-section" id="pakkumine">
+    <div class="container">
+      <div class="cta-inner">
+        <span class="label">Broneeri oma koht</span>
+        <h2 class="section-title" style="color:#fff;">Küsi personaalset <em>pakkumist</em></h2>
+        <p class="cta-desc">Müüki läheb vaid <strong style="color:var(--accent-l);">3 privaatset kajutit</strong> kuupäevadeks 16.–23.05.2026. Kohti on kuuele kiiremale!</p>
+        <p class="cta-urgency">Valikus: koht kaheses kajutis · terve privaatne kajut kahele · kogu sõpruskonnaga</p>
+      </div>
+
+      <!-- Contact Form -->
+      <form id="lp-contact-form" class="lp-form" action="https://formsubmit.co/peeter@kargu.ee" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Nimi</label>
+            <input type="text" id="name" name="name" placeholder="Sinu nimi" />
+          </div>
+          <div class="form-group">
+            <label for="phone">Telefon</label>
+            <input type="tel" id="phone" name="phone" placeholder="+372 ..." />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">E-posti aadress <span class="required">*</span></label>
+          <input type="email" id="email" name="email" placeholder="sinu@email.ee" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Sinu soov</label>
+          <textarea id="message" name="message"
+            placeholder="Mitu inimest tuleb? Kas soovid tervet kajutit või kohta jagatud kajutis? Muud erisoovid..."></textarea>
+        </div>
+
+        <!-- FormSubmit settings -->
+        <input type="hidden" name="_subject" value="🇭🇷 Horvaatia kevadkruiis Mai 2026 — uus päring!" />
+        <input type="hidden" name="_next" value="https://www.kargu.ee/purjereisid/horvaatia-kevad-2026.html?sent=1" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="text" name="_honey" style="display:none" />
+
+        <button type="submit" class="btn-submit-lp">
+          Saada päring
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M5 12h14" /><path d="M12 5l7 7-7 7" />
+          </svg>
+        </button>
+      </form>
+
+      <!-- Success Message -->
+      <div id="success" class="success-message">
+        <div class="success-icon">⛵</div>
+        <h3>Täname!</h3>
+        <p>Sinu päring Horvaatia kevadkruiisi kohta on saadetud. Katri võtab Sinuga ühendust esimesel võimalusel!</p>
+        <a href="/purjereisid/">← Tagasi avalehele</a>
+      </div>
+
+      <div class="alt-contact">
+        Eelistad otse? <a href="https://wa.me/3725067651" target="_blank" rel="noopener noreferrer">WhatsApp</a> · <a href="mailto:peeter@kargu.ee">peeter@kargu.ee</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <svg viewBox="0 0 120 120" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="60" y1="10" x2="60" y2="100" stroke="#c8a55c" stroke-width="3" stroke-linecap="round" />
+          <path d="M60 16 Q92 40 60 84" fill="none" stroke="#c8a55c" stroke-width="2.5" stroke-linecap="round" />
+          <path d="M16 94 Q36 86 60 88 Q84 86 104 94" fill="none" stroke="#c8a55c" stroke-width="2.5"
+            stroke-linecap="round" />
+        </svg>
+        <span>PURJEREISID</span>
+      </div>
+      <span class="footer-copy">© 2026 · Kapten Peeter & Katri · Horvaatia Kevadkruiis</span>
+    </div>
+  </footer>
+
+  <!-- TouristTrip + Offer Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TouristTrip",
+    "name": "Horvaatia Kevadkruiis Mai 2026 — Lagoon 46 Luksuskatamaraan",
+    "description": "Eksklusiivne 7-päevane luksuskruiis Horvaatias uuel Lagoon 46 katamaraanil. All-inclusive pardatoitlustus, täiskindlustus, kogenud eestikeelne kapten. Start Trogirist, Spliti lähedal. Potentsiaalsed peatused: Šolta, Brač, Hvar, Vis.",
+    "touristType": "Luxury Travel",
+    "inLanguage": "et",
+    "itinerary": {
+      "@type": "ItemList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Trogir (start)" },
+        { "@type": "ListItem", "position": 2, "name": "Šolta" },
+        { "@type": "ListItem", "position": 3, "name": "Brač" },
+        { "@type": "ListItem", "position": 4, "name": "Hvar" },
+        { "@type": "ListItem", "position": 5, "name": "Vis" }
+      ]
+    },
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/LimitedAvailability",
+      "validFrom": "2026-03-23",
+      "validThrough": "2026-05-16",
+      "availabilityStarts": "2026-05-16T17:00:00+02:00",
+      "availabilityEnds": "2026-05-23T09:00:00+02:00",
+      "priceCurrency": "EUR",
+      "description": "3 privaatset kajutit, all-inclusive pardatoitlustus, täiskindlustus, kütus, sadamatasud"
+    },
+    "provider": {
+      "@type": "TravelAgency",
+      "name": "Purjereisid",
+      "url": "https://www.kargu.ee/purjereisid/",
+      "email": "peeter@kargu.ee",
+      "telephone": "+372 506 7651",
+      "founder": {
+        "@type": "Person",
+        "name": "Peeter Kargu",
+        "jobTitle": "Kapten"
+      }
+    },
+    "image": "https://www.kargu.ee/purjereisid/images/horvaatia-hero.webp"
+  }
+  </script>
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Purjereisid",
+        "item": "https://www.kargu.ee/purjereisid/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Horvaatia Kevadkruiis Mai 2026",
+        "item": "https://www.kargu.ee/purjereisid/horvaatia-kevad-2026.html"
+      }
+    ]
+  }
+  </script>
+
+  <script>
+    // Show success message if redirected after submission
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('sent') === '1') {
+      document.getElementById('lp-contact-form').style.display = 'none';
+      document.querySelector('.alt-contact').style.display = 'none';
+      document.getElementById('success').classList.add('show');
+    }
+  </script>
+</body>
+
+</html>

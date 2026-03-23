@@ -34,6 +34,12 @@
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.kargu.ee/purjereisid/kontakt-ru.html"/>
   </url>
   <url>
+    <loc>https://www.kargu.ee/purjereisid/horvaatia-kevad-2026.html</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
     <loc>https://www.kargu.ee/purjereisid/blogi/purjereis-kreekas-2026.html</loc>
     <lastmod>2026-03-17</lastmod>
     <changefreq>monthly</changefreq>
