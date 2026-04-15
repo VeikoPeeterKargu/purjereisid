@@ -7,6 +7,57 @@
   <title>Purjereisid — Katamaraaniga Vahemerel</title>
   <meta name="description"
     content="Katamaraaniga purjetamine Vahemerel. Türgi, Kreeka, Horvaatia ja Itaalia ilusamad rannikud koos kapten Peetri ja Katriga." />
+  <link rel="canonical" href="https://kargu.ee/purjereisid/">
+  <meta name="robots" content="index, follow">
+  <!-- OG -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Purjereisid — Katamaraaniga Vahemerel">
+  <meta property="og:description" content="Katamaraaniga purjetamine Vahemerel. Türgi, Kreeka, Horvaatia ja Itaalia ilusamad rannikud.">
+  <meta property="og:url" content="https://kargu.ee/purjereisid/">
+  <meta property="og:image" content="https://kargu.ee/purjereisid/images/hero-catamaran-sunset.png">
+  <meta property="og:locale" content="et_EE">
+  <meta property="og:site_name" content="Purjereisid">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Purjereisid — Katamaraaniga Vahemerel">
+  <meta name="twitter:description" content="Katamaraaniga purjetamine Vahemerel. Türgi, Kreeka, Horvaatia ja Itaalia.">
+  <meta name="twitter:image" content="https://kargu.ee/purjereisid/images/hero-catamaran-sunset.png">
+  <!-- GA4 with Consent Mode v2 -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied'
+    });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1CQ79NTTPS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1CQ79NTTPS', { content_group: 'Purjereisid' });
+  </script>
+  <!-- JSON-LD TouristTrip -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TouristTrip",
+    "name": "Katamaraaniga purjetamine Vahemerel",
+    "description": "Purjereisid katamaraaniga Vahemerel: Türgi, Kreeka, Horvaatia, Itaalia. Reisid 7, 14 või 21 päeva.",
+    "touristType": ["Sailing", "Adventure", "Couples", "Families"],
+    "provider": {
+      "@type": "Person",
+      "name": "Veiko-Peeter Kargu",
+      "jobTitle": "Captain",
+      "url": "https://kargu.ee"
+    },
+    "url": "https://kargu.ee/purjereisid/",
+    "image": "https://kargu.ee/purjereisid/images/hero-catamaran-sunset.png"
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -388,6 +439,35 @@
   </footer>
 
   <script type="module" src="/src/main.js"></script>
+
+  <!-- Cookie Consent Banner (GDPR) -->
+  <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(11,29,61,0.97);backdrop-filter:blur(16px);color:#f4f0eb;padding:16px 24px;z-index:9999;font-family:'Inter',sans-serif;font-size:14px;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;">
+    <span>Kasutame analüütikajaoks küpsiseid (Google Analytics).
+      <a href="/privaatsuspoliitika" style="color:#c8a55c;text-decoration:underline;">Loe lähemalt →</a>
+    </span>
+    <span style="display:flex;gap:8px;">
+      <button onclick="declineCookiesPR()" style="padding:8px 16px;border:1px solid rgba(200,165,92,0.3);background:transparent;color:#c8a55c;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;">Keeldun</button>
+      <button onclick="acceptCookiesPR()" style="padding:8px 16px;border:none;background:#c8a55c;color:#0b1d3d;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;">Nõustun</button>
+    </span>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (!localStorage.getItem('cookiesAccepted_pr')) {
+        document.getElementById('cookie-banner').style.display = 'flex';
+      }
+    });
+    function acceptCookiesPR() {
+      localStorage.setItem('cookiesAccepted_pr', 'true');
+      document.getElementById('cookie-banner').style.display = 'none';
+      if (typeof gtag === 'function') {
+        gtag('consent', 'update', { 'analytics_storage': 'granted' });
+      }
+    }
+    function declineCookiesPR() {
+      localStorage.setItem('cookiesAccepted_pr', 'false');
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+  </script>
 </body>
 
 </html>
