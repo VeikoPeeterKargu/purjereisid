@@ -1,0 +1,14 @@
+<svg viewBox="0 0 120 120" width="120" height="120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Purjereisid logo (dark background)">
+  <!-- Dark background -->
+  <rect width="120" height="120" fill="#0b1d3d" rx="12"/>
+  <!-- Mast -->
+  <line x1="60" y1="10" x2="60" y2="100" stroke="#c8a55c" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Main sail -->
+  <path d="M60 16 Q92 40 60 84" fill="rgba(200,165,92,.15)" stroke="#c8a55c" stroke-width="2" stroke-linecap="round"/>
+  <!-- Jib sail -->
+  <path d="M60 24 Q34 48 60 84" fill="rgba(226,202,138,.07)" stroke="#e2ca8a" stroke-width="1.3" stroke-linecap="round" opacity=".7"/>
+  <!-- Water line 1 -->
+  <path d="M16 94 Q36 86 60 88 Q84 86 104 94" fill="none" stroke="#c8a55c" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Water line 2 -->
+  <path d="M10 102 Q34 94 60 96 Q86 94 110 102" fill="none" stroke="#c8a55c" stroke-width="1.2" stroke-linecap="round" opacity=".35"/>
+</svg>

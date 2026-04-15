@@ -7,7 +7,8 @@ export function initAnimations() {
     // ── Hero entrance ──
     const heroTl = gsap.timeline({ delay: 1 });
     heroTl
-        .to('.hero-eyebrow', { opacity: 1, y: 0, duration: .8, ease: 'power3.out' })
+        .to('.urgency-badge', { opacity: 1, y: 0, duration: .8, ease: 'power3.out' })
+        .to('.hero-eyebrow', { opacity: 1, y: 0, duration: .8, ease: 'power3.out' }, '-=.6')
         .to('.hero-title', { opacity: 1, y: 0, duration: 1, ease: 'power3.out' }, '-=.4')
         .to('.hero-sub', { opacity: 1, y: 0, duration: .8, ease: 'power3.out' }, '-=.4')
         .to('.hero-ctas', { opacity: 1, y: 0, duration: .8, ease: 'power3.out' }, '-=.3');
@@ -107,5 +108,43 @@ export function initAnimations() {
     gsap.to('.hero-img', {
         y: 80, ease: 'none',
         scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 1.5 }
+    });
+
+    // ── Testimonial Cards ──
+    gsap.utils.toArray('.testimonial-card').forEach((el, i) => {
+        gsap.fromTo(el,
+            { opacity: 0, y: 40 },
+            {
+                opacity: 1, y: 0,
+                duration: .8, delay: (i % 3) * .15, ease: 'power3.out',
+                scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none reverse' }
+            }
+        );
+    });
+
+    // ── Magnetic Buttons (Hover effect) ──
+    const magneticBtns = document.querySelectorAll('.btn-magnetic');
+    magneticBtns.forEach(btn => {
+        btn.addEventListener('mousemove', (e) => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+
+            gsap.to(btn, {
+                x: x * 0.3,
+                y: y * 0.3,
+                duration: 0.4,
+                ease: 'power2.out'
+            });
+        });
+
+        btn.addEventListener('mouseleave', () => {
+            gsap.to(btn, {
+                x: 0,
+                y: 0,
+                duration: 0.7,
+                ease: 'elastic.out(1, 0.3)'
+            });
+        });
     });
 }
